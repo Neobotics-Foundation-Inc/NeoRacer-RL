@@ -47,12 +47,12 @@ public class Lidar : RacecarModule
     /// The maximum distance that can be detected (in m).
     /// Based on the Hokuyo Lidar datasheet.
     /// </summary>
-    private const float maxRange = 10;
+    private const float maxRange = 10; 
 
     /// <summary>
     /// The value recorded for a sample greater than maxRange.
     /// </summary>
-    private const float maxCode = 0.0f;
+    private const float maxCode = 100.0f;
 
     /// <summary>
     /// The average relative error of distance measurements.
@@ -165,9 +165,14 @@ public class Lidar : RacecarModule
     /// <returns>The distance (in cm) of the object directly in view of the LIDAR.</returns>
     private float TakeSample()
     {
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out RaycastHit raycastHit, Lidar.maxRange, Constants.IgnoreUIMask))
+        // Calculate a layer mask that ignores the UI AND ignores the "Player" (the car itself)
+        int playerLayerMask = 1 << LayerMask.NameToLayer("Player");
+        int finalMask = Constants.IgnoreUIMask & ~playerLayerMask;
+
+        // Use the new finalMask in the Raycast
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out RaycastHit raycastHit, Lidar.maxRange, finalMask))
         {
-            float distance = Settings.IsRealism 
+            float distance = Settings.IsRealism  
                 ? raycastHit.distance * NormalDist.Random(1, Lidar.averageErrorFactor)
                 : raycastHit.distance;
             return distance > Lidar.minRange ? distance * 100 : Lidar.minCode;
@@ -175,6 +180,24 @@ public class Lidar : RacecarModule
 
         return Lidar.maxCode;
     }
+    
+    
+    
+    
+    
+    /// Old Code without player layer mask, kept for reference
+    /// private float TakeSample()
+    /// {
+        ///if (Physics.Raycast(this.transform.position, this.transform.forward, out RaycastHit raycastHit, Lidar.maxRange, Constants.IgnoreUIMask))
+        ///{
+            ///float distance = Settings.IsRealism  
+                ///? raycastHit.distance * NormalDist.Random(1, Lidar.averageErrorFactor)
+                ///: raycastHit.distance;
+            ///return distance > Lidar.minRange ? distance * 100 : Lidar.minCode;
+        ///}
+
+        ///return Lidar.maxCode;
+    ///}
 
     /// <summary>
     /// Returns true if the forward direction is clear.

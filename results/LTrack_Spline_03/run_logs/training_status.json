@@ -1,0 +1,29 @@
+{
+    "Racecar": {
+        "checkpoints": [
+            {
+                "steps": 69236,
+                "file_path": "results\\LTrack_Spline_03\\Racecar\\Racecar-69236.onnx",
+                "reward": null,
+                "creation_time": 1774297679.9614098,
+                "auxillary_file_paths": [
+                    "results\\LTrack_Spline_03\\Racecar\\Racecar-69236.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 69236,
+            "file_path": "results\\LTrack_Spline_03\\Racecar.onnx",
+            "reward": null,
+            "creation_time": 1774297679.9614098,
+            "auxillary_file_paths": [
+                "results\\LTrack_Spline_03\\Racecar\\Racecar-69236.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.0.1+cpu"
+    }
+}

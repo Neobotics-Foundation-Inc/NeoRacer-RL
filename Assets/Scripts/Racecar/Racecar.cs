@@ -86,6 +86,7 @@ public class Racecar : MonoBehaviour
     /// Indicates whether the racecar has collided with an object.
     /// </summary>
     public bool Collided { get; set; } = false;
+    public int CheckpointsHit { get; set; } = 0;
 
     private RacecarNWH carController;
 
@@ -151,6 +152,15 @@ public class Racecar : MonoBehaviour
             this.Drive.Speed = 0;
 
             Collided = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("CheckPoint"))
+        {
+            CheckpointsHit++; // Add to the counter
+            other.gameObject.SetActive(false); // Turn off the gate
         }
     }
 
