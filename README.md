@@ -3,6 +3,8 @@
 This repo has our brand new simulation, with our own physics and size of the racecar. No autograder, no levelmanagement. No track from MIT. We build our own track to train ML Agent.
 This will helps with streamline the ML learning process.
 
+<img width="1071" height="603" alt="Screenshot 2026-04-01 124619" src="https://github.com/user-attachments/assets/d749f341-5fd3-4398-aab8-990a687cd82f" />
+
 # Getting ready:
 
 ## Using Nix (Recommended)
