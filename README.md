@@ -2,7 +2,7 @@
 
 This repository contains a custom-built Unity simulation environment and Reinforcement Learning (RL) architecture for the NeoRacer autonomous platform. Moving away from standard autograders and pre-built tracks, this environment is built from the ground up to streamline the ML-Agents training process.
 
-![NeoRacer Simulation]([Link to your existing image])
+<img width="800" height="400" alt="Screenshot 2026-04-01 124619" src="https://github.com/user-attachments/assets/d749f341-5fd3-4398-aab8-990a687cd82f" />
 
 ## 🧠 Reinforcement Learning Architecture
 Our RL model utilizes Proximal Policy Optimization (PPO) combined with Imitation Learning to navigate the track autonomously. 
@@ -23,74 +23,6 @@ For deep dives into the math, setup, and research, please refer to our documenta
 ## 🚀 Getting Ready
 
 ### Using Nix (Recommended)
-[Copy and paste your exact existing Nix instructions here]
-
-### Legacy Setup (Using Conda)
-[Copy and paste your exact existing Conda instructions here]
-
----
-
-## 🎮 Running the Simulation
-[Copy and paste your existing "Running the Simulation" section here]
-
----
-
-## 📈 How to Train with Native ML-Agents
-[Copy and paste your existing ML-Agents terminal commands here]
-
-**Observe the Training:**
-Run `tensorboard --logdir results` then go to `localhost:6006` in your browser.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Simulation
-
-This repo has our brand new simulation, with our own physics and size of the racecar. No autograder, no levelmanagement. No track from MIT. We build our own track to train ML Agent.
-This will helps with streamline the ML learning process.
-
-<img width="1071" height="603" alt="Screenshot 2026-04-01 124619" src="https://github.com/user-attachments/assets/d749f341-5fd3-4398-aab8-990a687cd82f" />
-
-# Getting ready:
-
-## Using Nix (Recommended)
 1. Install Nix using the Determinate Systems installer:
    ```bash
    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
@@ -106,7 +38,7 @@ This will helps with streamline the ML learning process.
    make
    ```
 
-## Legacy Setup (Using Conda)
+### Legacy Setup (Using Conda)
 0. Clone this repository and cd to that directory.
 1. Create conda envrionment on that folder to keep the python side consistant: `conda env create -f environment.yml && conda activate mlagents`
     
@@ -118,7 +50,9 @@ This will helps with streamline the ML learning process.
 3. Open the repository in Unity. Select the Unity version as suggested. This ensures that the version control won't get messed up.
 4. After you opened it, go to "File"-->"Build and Run" to build the app. Alternatively, you can press "Command + B" for this step.
 
-# Running the Simulation
+---
+
+## 🎮 Running the Simulation
 You can run the simulation in two ways:
 1. Run the built simulation directly:
    ```bash
@@ -130,17 +64,17 @@ You can run the simulation in two ways:
    ```
 
 You can use the keyboard to drive the car around the sample track.
+---
 
-# How to Train with native ML Agent in Unity:
+## 📈 How to Train with Native ML-Agents
 Use command `mlagents-learn {NNParameter.yaml} --run-id={a unique name for this training session}`
 
 Note: If you have to quit (Ctrl-C) before it finishes training, you can run pass in `--resume` flag to the command. `mlagents-learn {NNParameter.yaml} --run-id={a unique name for this training session} --resume`
 
 When the message "Start training by pressing the Play button in the Unity Editor" is displayed on the screen, you can press the Play button in Unity to start training in the Editor.
 
-## Observe the training:
-* `tensorboard --logdir results` then go to `localhost:6006` on your browser.
-
+**Observe the Training:**
+Run `tensorboard --logdir results` then go to `localhost:6006` in your browser.
 
 ### Code reference from the MIT simulation:
 Initial setup includes codes from MIT simulation:
@@ -149,3 +83,7 @@ Initial setup includes codes from MIT simulation:
 * Scripts/Static folder: Constants.cs, NormalDist.cs, Settings.csScripts/UI folder: Hud.cs, ScreenManger.cs
 
 Modification on those files were later adapted.
+
+
+
+
