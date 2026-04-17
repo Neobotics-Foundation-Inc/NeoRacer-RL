@@ -1,3 +1,86 @@
+# NeoRacer-RL: Autonomous Racing Simulation 🏎️🧠
+
+This repository contains a custom-built Unity simulation environment and Reinforcement Learning (RL) architecture for the NeoRacer autonomous platform. Moving away from standard autograders and pre-built tracks, this environment is built from the ground up to streamline the ML-Agents training process.
+
+![NeoRacer Simulation]([Link to your existing image])
+
+## 🧠 Reinforcement Learning Architecture
+Our RL model utilizes Proximal Policy Optimization (PPO) combined with Imitation Learning to navigate the track autonomously. 
+
+### Key Technical Implementations
+* **Sensor Suite (Custom LiDAR):** Transitioned from heavy, high-density LiDAR to a highly optimized, downsampled Ray Perception Sensor 3D (Raycast) array to reduce computational overhead and prevent vector space mismatches.
+* **Reward Function:** Replaced sparse, discrete checkpoint rewards with a continuous, dense gradient. The step quality is calculated by multiplying normalized speed and alignment vectors, smoothed via the **Power Mean** to prevent erratic agent behavior.
+* **Training Pipeline:** Utilizes Behavioral Cloning (BC) for the initial training phase to establish an optimal racing line, automatically transitioning to pure RL for time-optimization and trajectory refinement.
+
+## 📚 Documentation & Guides
+For deep dives into the math, setup, and research, please refer to our documentation folder:
+* [📖 Student Training Guide](docs/Student_Training_Guide.md): Step-by-step tutorial on recording demonstrations, editing YAML configs, and reading TensorBoard.
+* [🔬 RL Architecture & Reward Math](docs/RL_Architecture_Report.md): Detailed breakdown of the continuous reward function, failsafes, and sensor downsampling.
+* [🔗 References & Research](docs/References.md): Academic literature and code references (including MIT simulation origins).
+
+---
+
+## 🚀 Getting Ready
+
+### Using Nix (Recommended)
+[Copy and paste your exact existing Nix instructions here]
+
+### Legacy Setup (Using Conda)
+[Copy and paste your exact existing Conda instructions here]
+
+---
+
+## 🎮 Running the Simulation
+[Copy and paste your existing "Running the Simulation" section here]
+
+---
+
+## 📈 How to Train with Native ML-Agents
+[Copy and paste your existing ML-Agents terminal commands here]
+
+**Observe the Training:**
+Run `tensorboard --logdir results` then go to `localhost:6006` in your browser.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Simulation
 
 This repo has our brand new simulation, with our own physics and size of the racecar. No autograder, no levelmanagement. No track from MIT. We build our own track to train ML Agent.
