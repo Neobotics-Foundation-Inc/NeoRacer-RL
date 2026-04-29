@@ -85,7 +85,7 @@ public class RacecarAgent : Agent
     {
         racecar.Drive.Angle = actions.ContinuousActions[0];
         racecar.Drive.Speed = Mathf.Clamp(actions.ContinuousActions[1], 0f, 1f);
-
+        AddReward(0.001f);
         float rawStepQuality = 0f;
         float pMean = 0f;
 
