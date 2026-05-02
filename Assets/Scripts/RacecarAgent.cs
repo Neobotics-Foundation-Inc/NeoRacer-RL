@@ -19,10 +19,6 @@ public class RacecarAgent : Agent
     [Header("UI Debugging")]
     public TextMeshProUGUI rewardDebuggerText;
 
-    [Header("Spawn Settings")]
-    public Vector3 spawnLocalPosition = new Vector3(0, 0, 28);
-    public Vector3 spawnLocalEulerAngles = new Vector3(0, 180, 0);
-
     // Checkpoint tracking
     private List<Collider> checkpointsList = new List<Collider>();
     private int targetGateIndex = 0;
@@ -50,8 +46,8 @@ public class RacecarAgent : Agent
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
 
-            racecar.transform.localPosition = spawnLocalPosition;
-            racecar.transform.localRotation = Quaternion.Euler(spawnLocalEulerAngles);
+            racecar.transform.localPosition = new Vector3(0, 0, 28); 
+            racecar.transform.localRotation = Quaternion.Euler(0, 180, 0); 
             rb.isKinematic = false;
         }
 
@@ -89,16 +85,7 @@ public class RacecarAgent : Agent
     {
         racecar.Drive.Angle = actions.ContinuousActions[0];
         racecar.Drive.Speed = Mathf.Clamp(actions.ContinuousActions[1], 0f, 1f);
-        if (racecar.Drive.Speed > 0.2f)
-        {
-            AddReward(0.001f * racecar.Drive.Speed);
-        }
-        else
-        {
-            AddReward(-0.001f);
-        }
-        
-        
+        AddReward(0.001f);
         float rawStepQuality = 0f;
         float pMean = 0f;
 
