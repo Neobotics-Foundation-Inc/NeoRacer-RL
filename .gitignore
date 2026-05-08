@@ -83,4 +83,4 @@ crashlytics-build.properties
 __pycache__/
 
 # ignore the unity version control file
-.plastic/
+.plastic/results/
