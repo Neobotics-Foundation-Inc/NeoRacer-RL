@@ -84,3 +84,4 @@ __pycache__/
 
 # ignore the unity version control file
 .plastic/results/
+results/
