@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use NeoRacer-RL in your research, please cite it as below."
+title: "NeoRacer-RL: Reinforcement Learning Simulator for the NeoRacer Autonomous Racing Platform"
+authors:
+  - family-names: Khan
+    given-names: Zaid
+  - family-names: Liu
+    given-names: Ruihang
+  - family-names: Focia
+    given-names: Georgina
+  - family-names: Mabsout
+    given-names: Bassel
+  - family-names: el Hamawi
+    given-names: Abdallah
+  - family-names: Panhale
+    given-names: Amogh
+  - family-names: Mehta
+    given-names: Ansh
+  - family-names: Bandyopadhyay
+    given-names: Koneshka
+  - name: "Neobotics Foundation Inc."
+type: software
+url: "https://github.com/Neobotics-Foundation-Inc/NeoRacer-RL"
+repository-code: "https://github.com/Neobotics-Foundation-Inc/NeoRacer-RL"
+license: GPL-3.0-only
+keywords:
+  - autonomous-racing
+  - reinforcement-learning
+  - unity
+  - ml-agents
+  - ppo
+  - imitation-learning
+  - neoracer
+date-released: 2024-10-28

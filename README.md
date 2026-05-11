@@ -84,6 +84,18 @@ Initial setup includes codes from MIT simulation:
 
 Modification on those files were later adapted.
 
+## 📚 Citation
 
+If you use **NeoRacer-RL** in published research, please cite this repository. GitHub renders a "Cite this repository" button from the [`CITATION.cff`](CITATION.cff) at the repo root that produces BibTeX/APA automatically.
 
+BibTeX:
 
+```bibtex
+@software{neobotics_neoracer_rl_2024,
+  author       = {Khan, Zaid and Liu, Ruihang and Focia, Georgina and Mabsout, Bassel and {el Hamawi}, Abdallah and others},
+  title        = {{NeoRacer-RL}: Reinforcement Learning Simulator for the {NeoRacer} Autonomous Racing Platform},
+  year         = {2024},
+  url          = {https://github.com/Neobotics-Foundation-Inc/NeoRacer-RL},
+  note         = {Neobotics Foundation Inc.}
+}
+```
