@@ -160,7 +160,8 @@ public class Racecar : MonoBehaviour
         if (other.gameObject.CompareTag("CheckPoint"))
         {
             CheckpointsHit++; // Add to the counter
-            other.gameObject.SetActive(false); // Turn off the gate
+                              //other.gameObject.SetActive(false); // Turn off the gate
+            Debug.Log("Checkpoint hit: " + other.gameObject.name);
         }
     }
 
