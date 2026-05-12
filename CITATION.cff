@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use NeoRacer-RL in your research, please cite it as below."
 title: "NeoRacer-RL: Reinforcement Learning Simulator for the NeoRacer Autonomous Racing Platform"
+abstract: "A Unity-based reinforcement learning simulator for the NeoRacer autonomous racing platform, developed by Neobotics Foundation Inc."
 authors:
   - family-names: Khan
     given-names: Zaid
@@ -18,7 +19,6 @@ authors:
     given-names: Ansh
   - family-names: Bandyopadhyay
     given-names: Koneshka
-  - name: "Neobotics Foundation Inc."
 type: software
 url: "https://github.com/Neobotics-Foundation-Inc/NeoRacer-RL"
 repository-code: "https://github.com/Neobotics-Foundation-Inc/NeoRacer-RL"
